@@ -13,4 +13,8 @@ export class FlightserviceService {
   getFlightNumber(): string {
     return this.flightNumber;
   }
+
+  resetFlightNumber(): string {
+    return this.flightNumber = '';
+  }
 }

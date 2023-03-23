@@ -9,7 +9,7 @@
 
 <ng-container *ngIf="flightservice.getFlightNumber()">
   <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side">
+    <mat-sidenav #sidenav mode="side" fixedInViewport="true">
       <mat-nav-list>
         <a mat-list-item routerLink="/home">Flight details</a>
         <a mat-list-item routerLink="/seats">Seats capacity</a>
@@ -23,9 +23,5 @@
     </button>
   </mat-sidenav-container>
 </ng-container>
-
-<!-- <ng-container *ngIf="menuEnabled">
-  <app-home-page></app-home-page>
-</ng-container> -->
 
 <router-outlet></router-outlet>

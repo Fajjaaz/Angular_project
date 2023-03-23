@@ -1,14 +1,15 @@
 <div class="start-page">
     <div style="display: flex; justify-content: center; align-items: center; height: 100vh">
-        <form #flightForm="ngForm" (ngSubmit)="onSubmit(flightForm)">
-            <mat-form-field appearance="outline">
-            <mat-label>Flight Number</mat-label>
-            <input matInput name="flightNumber" type="text" minlength="6" maxlength="6" [(ngModel)]="flightNumber" required>
-            <mat-error *ngIf="flightForm.controls['flightNumber'].hasError('required')">Flight number is required</mat-error>
-            <mat-error *ngIf="flightForm.controls['flightNumber'].hasError('minlength')">Flight number must be exactly 6 characters long</mat-error>
-            <mat-error *ngIf="flightForm.controls['flightNumber'].hasError('maxlength')">Flight number must be exactly 6 characters long</mat-error>
-            </mat-form-field>
-            <button mat-raised-button color="primary" type="submit" [disabled]="!flightForm.valid">Submit</button>
-        </form>
+      <form #flightForm="ngForm" (ngSubmit)="onSubmit(flightForm)" style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px;">
+        <mat-form-field appearance="outline" style="width: 90%; height: 60px;">
+          <mat-label>Flight Number</mat-label>
+          <input matInput name="flightNumber" type="text" minlength="6" maxlength="6" [(ngModel)]="flightNumber" required>
+          <mat-error *ngIf="flightForm.controls['flightNumber'].hasError('required')">Flight number is required</mat-error>
+          <mat-error *ngIf="flightForm.controls['flightNumber'].hasError('minlength')">Flight number must be exactly 6 characters long</mat-error>
+          <mat-error *ngIf="flightForm.controls['flightNumber'].hasError('maxlength')">Flight number must be exactly 6 characters long</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!flightForm.valid" style="width: 90%; height: 55px;">Submit</button>
+      </form>
     </div>
-</div>
+  </div>
+  

@@ -16,5 +16,6 @@ export class AppComponent {
   showStartPage() {
     this.menuEnabled = true;
     this.router.navigate(['']);
+    this.flightservice.resetFlightNumber();
   }
 }

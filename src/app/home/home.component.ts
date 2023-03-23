@@ -19,5 +19,6 @@ export class HomeComponent {
   onSubmit(form: NgForm) {
     // Set the flight number using the flightservice
     this.flightservice.setFlightNumber(form.value.flightNumber);
+    this.router.navigate(['home']);
   }
 }
