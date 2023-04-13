@@ -1,3 +1,14 @@
+<div class="centeredTitle">
+  <h1>Luggage capacity for flight {{ flightservice.getFlightNumber() }}</h1>
+</div>
+
 <div class="centered">
-    <p>Details for luggage capacity</p>
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <p style="margin-bottom: 1rem;">On flight {{ flightservice.getFlightNumber() }}, you are allowed to carry luggage up to {{ flightinfoservice.getLuggage() }}.<br>
+      This can be divided as shown in the picture below:</p>
+    <img src="assets/lugagge.JPG" alt="Luggage Image" style="width: 100%; max-width: 400px; margin-top: 1rem;">
+    <p style="margin-bottom: 1rem;">Our airline provides spacious overhead compartments and under-seat storage for your convenience.<br> 
+      However, please ensure that your luggage meets our weight and size restrictions.<br>
+      For more information on luggage restrictions, please visit our website or contact our customer service.</p>
   </div>
+</div>

@@ -1,3 +1,12 @@
+<div class="centeredTitle">
+  <h1>Seats capacity for flight {{ flightservice.getFlightNumber() }}</h1>
+</div>
+
 <div class="centered">
-    <p>Details for seats capacity</p>
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <p style="margin-bottom: 1rem;">Flight {{ flightservice.getFlightNumber() }} has a capacity of {{ flightinfoservice.getSeats() }} seats.<br> 
+      Our airline provides comfortable seating arrangements for all passengers, with ample legroom and recline options.<br>
+      We also offer in-flight entertainment and catering. For the catering options please take a look at the <a routerLink="/catering">catering page</a>.</p>
+    <img src="assets/seats.jpg" alt="Seats Image" style="width: 100%; max-width: 400px; margin-top: 1rem;">
   </div>
+</div>

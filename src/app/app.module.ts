@@ -19,6 +19,8 @@ import { SeatsCapComponent } from './seats-cap/seats-cap.component';
 import { LuggageCapComponent } from './luggage-cap/luggage-cap.component';
 import { CateringComponent } from './catering/catering.component';
 import { CrewComponent } from './crew/crew.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -47,6 +49,8 @@ import { CrewComponent } from './crew/crew.component';
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

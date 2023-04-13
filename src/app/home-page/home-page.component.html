@@ -1,3 +1,22 @@
+<div class ="centeredTitle">
+  <h1>General info about flight {{flightservice.getFlightNumber()}}</h1>
+</div>
+
 <div class="centered">
-    <p>Details for flight number {{ flightservice.getFlightNumber() }}</p>
-  </div>
+  <table>
+  <tr>
+    <th>Flight Number</th>
+    <th>Gate Number</th>
+    <th>Date</th>
+    <th>Departure Time</th>
+    <th>Arrival Time</th>
+  </tr>
+  <tr>
+    <td>{{ flightservice.getFlightNumber() }}</td>
+    <td>{{ flightinfoservice.getGate() }}</td>
+    <td>{{ flightinfoservice.getDate() }}</td>
+    <td>{{ flightinfoservice.getDepartureTime() }}</td>
+    <td>{{ flightinfoservice.getArrivalTime() }}</td>
+  </tr>
+</table>
+</div>

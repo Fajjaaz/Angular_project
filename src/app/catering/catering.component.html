@@ -1,3 +1,14 @@
+<div class="centeredTitle">
+  <h1>Catering information for flight {{flightservice.getFlightNumber()}}</h1>
+</div>
+
 <div class="centered">
-    <p>Details for catering</p>
+  <div style="display: flex; flex-direction: column; align-items: center; margin-top: 1rem;">
+    <p style="margin-bottom: 1rem;">On flight {{flightservice.getFlightNumber()}}, we offer a range of delicious and freshly prepared meals to satisfy your appetite.<br>
+      You can choose between {{flightinfoservice.getCatering()}} on flight {{flightservice.getFlightNumber()}}.<br>
+      Our catering menu is carefully curated by our team of expert chefs, using only the freshest and highest quality ingredients.<br>
+      We offer a range of options to accommodate all dietary requirements, including vegetarian, vegan, and gluten-free meals.<br>
+      If you have any special dietary needs, please let us know at the time of booking.</p>
+    <img src="assets/food.jpg" alt="Food Image" style="width: 100%; max-width: 400px;">
   </div>
+</div>  

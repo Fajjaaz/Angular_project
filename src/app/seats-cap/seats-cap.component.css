@@ -4,3 +4,13 @@
     align-items: center;
     height: 100vh;
   }
+
+
+  .centeredTitle {
+    text-align: center;
+    margin-top: 0;
+    position: absolute;
+    top: 30;
+    left: 50%;
+    transform: translateX(-50%);
+  }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FlightserviceService } from 'src/app/flightservice.service';
+import { FlightinfoserviceService } from './flightinfoservice.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,7 @@ import { FlightserviceService } from 'src/app/flightservice.service';
 })
 export class AppComponent {
   menuEnabled: boolean;
-  constructor(readonly flightservice: FlightserviceService, private readonly router:Router){
+  constructor(readonly flightservice: FlightserviceService, private readonly router:Router, readonly flightinfoservice: FlightinfoserviceService){
     this.menuEnabled = false;
   }
   title = 'FlightManager';
@@ -17,5 +19,6 @@ export class AppComponent {
     this.menuEnabled = true;
     this.router.navigate(['']);
     this.flightservice.resetFlightNumber();
+    this.flightinfoservice.resetFlightInfo();
   }
 }

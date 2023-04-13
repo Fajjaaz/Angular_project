@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FlightinfoserviceService } from '../flightinfoservice.service';
 import { FlightserviceService } from '../flightservice.service';
 
 @Component({
@@ -7,5 +8,5 @@ import { FlightserviceService } from '../flightservice.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
-  constructor(readonly flightservice: FlightserviceService){}
+  constructor(readonly flightservice: FlightserviceService, readonly flightinfoservice: FlightinfoserviceService){}
 }

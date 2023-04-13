@@ -1,3 +1,10 @@
+<div class="centeredTitle">
+  <h1>Crew details for flight {{flightservice.getFlightNumber()}}</h1>
+</div>
+
 <div class="centered">
-    <p>Details for crew</p>
+  <div style="display: flex; flex-direction: column; align-items: center; margin-top: 1rem;">
+    <p style="margin-bottom: 1rem;">On flight {{flightservice.getFlightNumber()}}, the crew exists of {{flightinfoservice.getCrew()}}.</p>
+    <img src="assets/crew.jpg" alt="Crew Image" style="width: 100%; max-width: 400px;">
   </div>
+</div> 
