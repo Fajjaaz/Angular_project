@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FlightinfoserviceService } from '../flightinfoservice.service';
 import { FlightserviceService } from '../flightservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-seats-cap',
@@ -8,5 +9,5 @@ import { FlightserviceService } from '../flightservice.service';
   styleUrls: ['./seats-cap.component.css']
 })
 export class SeatsCapComponent {
-  constructor(readonly flightservice: FlightserviceService, readonly flightinfoservice: FlightinfoserviceService){}
+  constructor(private readonly router: Router,readonly flightservice: FlightserviceService, readonly flightinfoservice: FlightinfoserviceService){}
 }

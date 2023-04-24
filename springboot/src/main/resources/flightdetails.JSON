@@ -1,0 +1,25 @@
+[
+  {
+    "id":"KLM123",
+    "departure time":"12:00",
+    "arrival time":"15:00",
+    "date":"10-04-2023",
+    "gate":"A1",
+    "seats":149,
+    "luggage":"35 kg",
+    "catering":"fish and vegan",
+    "crew":"crew members"
+  },
+
+  {
+    "id":"KLM100",
+    "departure time":"13:00",
+    "arrival time":"19:00",
+    "date":"14-04-2023",
+    "gate":"A2",
+    "seats":220,
+    "luggage":"35 kg",
+    "catering":"fish and vegan",
+    "crew":"crew members"
+  }
+]
