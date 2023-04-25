@@ -1,44 +1,21 @@
 package com.example.demo;
-import org.springframework.stereotype.Service;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
+
 import org.json.simple.parser.ParseException;
+import org.springframework.stereotype.Service;
+
 import java.io.IOException;
+import java.util.Map;
 
 @Service
 public class FlightService {
 
-  public Map<String, Object> getFlightDetail(String flightNumber) throws IOException, ParseException {
-    String fileName = "flightdetails.json";
-    InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName);
-    BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+    private final FlightDetailsDAL flightDetailsDAL;
 
-    JSONParser jsonParser = new JSONParser();
-    JSONArray jsonArray = (JSONArray) jsonParser.parse(reader);
-
-    for (Object obj : jsonArray) {
-      JSONObject jsonObject = (JSONObject) obj;
-      String id = (String) jsonObject.get("id");
-      if (id.equals(flightNumber)) {
-        Map<String, Object> flightDetail = new HashMap<>();
-        flightDetail.put("id", id);
-        flightDetail.put("departureTime", jsonObject.get("departure time"));
-        flightDetail.put("arrivalTime", jsonObject.get("arrival time"));
-        flightDetail.put("gate", jsonObject.get("gate"));
-        flightDetail.put("date", jsonObject.get("date"));
-        flightDetail.put("seats", jsonObject.get("seats"));
-        flightDetail.put("luggage", jsonObject.get("luggage"));
-        flightDetail.put("catering", jsonObject.get("catering"));
-        flightDetail.put("crew", jsonObject.get("crew"));
-        return flightDetail;
-      }
+    public FlightService(FlightDetailsDAL flightDetailsDAL) {
+        this.flightDetailsDAL = flightDetailsDAL;
     }
-    return null;
-  }
+
+    public Map<String, Object> getFlightDetail(String flightNumber) throws IOException, ParseException {
+        return flightDetailsDAL.getFlightDetails(flightNumber);
+    }
 }
