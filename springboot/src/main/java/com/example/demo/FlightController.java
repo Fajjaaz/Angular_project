@@ -46,5 +46,45 @@ public class FlightController {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Looks like you typed in an incorrect flight number.");
     }
   }
+
+  @GetMapping("/flightSeats")
+  public ResponseEntity<Object> getFlightSeats(@RequestParam(value = "flightNumber") String flightNumber) throws IOException, ParseException {
+    Map<String, Object> flightSeats = flightService.getFlightSeats(flightNumber);
+    if (flightSeats != null) {
+      return ResponseEntity.ok(flightSeats);
+    } else {
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Looks like you typed in an incorrect flight number.");
+    }
+  }
+
+  @GetMapping("/flightLugagge")
+  public ResponseEntity<Object> getFlightLugagge(@RequestParam(value = "flightNumber") String flightNumber) throws IOException, ParseException {
+    Map<String, Object> flightLugagge = flightService.getFlightLugagge(flightNumber);
+    if (flightLugagge != null) {
+      return ResponseEntity.ok(flightLugagge);
+    } else {
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Looks like you typed in an incorrect flight number.");
+    }
+  }
+
+  @GetMapping("/flightCatering")
+  public ResponseEntity<Object> getFlightCatering(@RequestParam(value = "flightNumber") String flightNumber) throws IOException, ParseException {
+    Map<String, Object> flightCatering = flightService.getFlightCatering(flightNumber);
+    if (flightCatering != null) {
+      return ResponseEntity.ok(flightCatering);
+    } else {
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Looks like you typed in an incorrect flight number.");
+    }
+  }
+
+  @GetMapping("/flightCrew")
+  public ResponseEntity<Object> getFlightCrew(@RequestParam(value = "flightNumber") String flightNumber) throws IOException, ParseException {
+    Map<String, Object> flightCrew = flightService.getFlightCrew(flightNumber);
+    if (flightCrew != null) {
+      return ResponseEntity.ok(flightCrew);
+    } else {
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Looks like you typed in an incorrect flight number.");
+    }
+  }
 }
 

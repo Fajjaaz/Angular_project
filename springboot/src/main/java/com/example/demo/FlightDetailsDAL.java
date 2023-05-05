@@ -34,11 +34,91 @@ public class FlightDetailsDAL {
                 flightDetail.put("arrivalTime", jsonObject.get("arrival time"));
                 flightDetail.put("gate", jsonObject.get("gate"));
                 flightDetail.put("date", jsonObject.get("date"));
-                flightDetail.put("seats", jsonObject.get("seats"));
-                flightDetail.put("luggage", jsonObject.get("luggage"));
-                flightDetail.put("catering", jsonObject.get("catering"));
-                flightDetail.put("crew", jsonObject.get("crew"));
                 return flightDetail;
+            }
+        }
+        return null;
+    }
+
+    public Map<String, Object> getFlightSeats(String flightNumber) throws IOException, ParseException {
+        String fileName = "flightdetails.json";
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+
+        JSONParser jsonParser = new JSONParser();
+        JSONArray jsonArray = (JSONArray) jsonParser.parse(reader);
+
+        for (Object obj : jsonArray) {
+            JSONObject jsonObject = (JSONObject) obj;
+            String id = (String) jsonObject.get("id");
+            if (id.equals(flightNumber)) {
+                Map<String, Object> flightSeats = new HashMap<>();
+                flightSeats.put("id", id);
+                flightSeats.put("seats", jsonObject.get("seats"));
+                return flightSeats;
+            }
+        }
+        return null;
+    }
+
+    public Map<String, Object> getFlightLugagge(String flightNumber) throws IOException, ParseException {
+        String fileName = "flightdetails.json";
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+
+        JSONParser jsonParser = new JSONParser();
+        JSONArray jsonArray = (JSONArray) jsonParser.parse(reader);
+
+        for (Object obj : jsonArray) {
+            JSONObject jsonObject = (JSONObject) obj;
+            String id = (String) jsonObject.get("id");
+            if (id.equals(flightNumber)) {
+                Map<String, Object> flightLugagge = new HashMap<>();
+                flightLugagge.put("id", id);
+                flightLugagge.put("lugagge", jsonObject.get("lugagge"));
+                return flightLugagge;
+            }
+        }
+        return null;
+    }
+
+    public Map<String, Object> getFlightCatering(String flightNumber) throws IOException, ParseException {
+        String fileName = "flightdetails.json";
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+
+        JSONParser jsonParser = new JSONParser();
+        JSONArray jsonArray = (JSONArray) jsonParser.parse(reader);
+
+        for (Object obj : jsonArray) {
+            JSONObject jsonObject = (JSONObject) obj;
+            String id = (String) jsonObject.get("id");
+            if (id.equals(flightNumber)) {
+                Map<String, Object> flightCatering = new HashMap<>();
+                flightCatering.put("id", id);
+                flightCatering.put("catering", jsonObject.get("catering"));
+                return flightCatering;
+            }
+        }
+        return null;
+    }
+
+    public Map<String, Object> getFlightCrew(String flightNumber) throws IOException, ParseException {
+        String fileName = "flightdetails.json";
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+
+        JSONParser jsonParser = new JSONParser();
+        JSONArray jsonArray = (JSONArray) jsonParser.parse(reader);
+
+        for (Object obj : jsonArray) {
+            JSONObject jsonObject = (JSONObject) obj;
+            String id = (String) jsonObject.get("id");
+            if (id.equals(flightNumber)) {
+                Map<String, Object> flightCrew = new HashMap<>();
+                flightCrew.put("id", id);
+                flightCrew.put("crew", jsonObject.get("crew"));
+                return flightCrew;
             }
         }
         return null;
