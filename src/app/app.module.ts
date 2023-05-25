@@ -21,6 +21,8 @@ import { CateringComponent } from './catering/catering.component';
 import { CrewComponent } from './crew/crew.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -35,6 +37,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     LuggageCapComponent,
     CateringComponent,
     CrewComponent,
+    NotFoundComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

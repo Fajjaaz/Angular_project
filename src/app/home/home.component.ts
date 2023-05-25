@@ -29,7 +29,7 @@ export class HomeComponent {
         this.flightinfoservice.getFlightLugagge(form.value.flightNumber);
         this.flightinfoservice.getFlightCatering(form.value.flightNumber);
         this.flightinfoservice.getFlightCrew(form.value.flightNumber);
-        this.router.navigate(['home']);
+        this.router.navigate(['details']);
       } else {
         this.router.navigate(['']);
         this.flightservice.resetFlightNumber();

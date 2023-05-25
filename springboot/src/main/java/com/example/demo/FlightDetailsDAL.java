@@ -30,8 +30,8 @@ public class FlightDetailsDAL {
             if (id.equals(flightNumber)) {
                 Map<String, Object> flightDetail = new HashMap<>();
                 flightDetail.put("id", id);
-                flightDetail.put("departureTime", jsonObject.get("departure time"));
-                flightDetail.put("arrivalTime", jsonObject.get("arrival time"));
+                flightDetail.put("departureTime", jsonObject.get("departureTime"));
+                flightDetail.put("arrivalTime", jsonObject.get("arrivalTime"));
                 flightDetail.put("gate", jsonObject.get("gate"));
                 flightDetail.put("date", jsonObject.get("date"));
                 return flightDetail;

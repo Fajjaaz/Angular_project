@@ -14,7 +14,7 @@ public class FlightService {
     public FlightService(FlightDetailsDAL flightDetailsDAL) {
         this.flightDetailsDAL = flightDetailsDAL;
     }
-
+    
     public Map<String, Object> getFlightDetail(String flightNumber) throws IOException, ParseException {
         return flightDetailsDAL.getFlightDetails(flightNumber);
     }

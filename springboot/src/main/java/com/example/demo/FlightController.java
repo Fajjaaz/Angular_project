@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 import java.io.IOException;
 
 import java.io.BufferedReader;
@@ -22,9 +25,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
+
+
+
 @SpringBootApplication
 @RestController
 @CrossOrigin(origins = {"http://localhost:4200"})
+@ComponentScan("com.example.demo")
+@EnableJdbcRepositories(basePackages = "com.example.demo")
 public class FlightController {
 
 	public static void main(String[] args) {
@@ -32,9 +42,27 @@ public class FlightController {
 	}
 
   private final FlightService flightService;
+  private final FlightServicePostgresql flightService2;
 
-  public FlightController(FlightService flightService) {
+  public FlightController(FlightService flightService, FlightServicePostgresql flightService2) {
     this.flightService = flightService;
+    this.flightService2 = flightService2;
+  }
+
+  @GetMapping("/flightpostgresql")
+  public ResponseEntity<Flight> getFlightByNumber(@RequestParam(value = "flightNumber") String flightNumber) {
+      Flight flight = flightService2.getFlightPostgresql(flightNumber);
+      if (flight != null) {
+          return ResponseEntity.ok(flight);
+      } else {
+          return ResponseEntity.notFound().build();
+      }
+  }
+
+  @PostMapping("/flightpostgresqlPOST")
+  public ResponseEntity<Flight> addFlight(@RequestBody Flight flight) {
+      Flight createdFlight = flightService2.addFlightPostgresql(flight);
+      return ResponseEntity.status(HttpStatus.CREATED).body(createdFlight);
   }
 
   @GetMapping("/flightDetail")

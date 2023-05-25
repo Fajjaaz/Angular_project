@@ -24,6 +24,11 @@
     color: white !important;
   }
 
+  .menu-container {
+  display: flex;
+  align-items: center;
+  }
+
   .center {
     display: flex;
     justify-content: center;
@@ -31,5 +36,7 @@
     width: 100%;
   }
 
-  
+  .mat-sidenav {
+    margin-top: 60px;
+  }
   
