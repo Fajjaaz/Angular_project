@@ -23,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { AdminpageComponent } from './adminpage/adminpage.component';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -39,6 +41,8 @@ import { LoginComponent } from './login/login.component';
     CrewComponent,
     NotFoundComponent,
     LoginComponent,
+    AdminpageComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

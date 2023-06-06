@@ -1,0 +1,42 @@
+.mat-drawer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: rgb(0, 161, 228);
+    color: white;
+  }
+
+  .mat-toolbar {
+    background-color: rgb(0, 161, 228);
+    color: white;
+  }
+
+  .mat-list-item {
+    color: white;
+  }
+
+  .mat-nav-list a {
+    color: white !important;
+  }
+
+  mat-sidenav-container mat-nav-list a {
+    color: white !important;
+  }
+
+  .menu-container {
+  display: flex;
+  align-items: center;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .mat-sidenav {
+    margin-top: 60px;
+  }
+  

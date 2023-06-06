@@ -59,6 +59,32 @@ public class FlightController {
       }
   }
 
+  @GetMapping("/userdatabase")
+  public ResponseEntity<User> getUser(@RequestParam(value = "user") String username) {
+      User user = flightService2.getUserPostgresql(username);
+      if (user != null) {
+          return ResponseEntity.ok(user);
+      } else {
+          return ResponseEntity.notFound().build();
+      }
+  }
+
+  @PostMapping("/userdatabasePOST")
+  public ResponseEntity<User> updateUser(@RequestParam(value = "user") String username, @RequestBody User updatedUser) {
+      User existingUser = flightService2.getUserPostgresql(username);
+      if (existingUser != null) {
+          existingUser.setName(updatedUser.getName());
+          existingUser.setAddress(updatedUser.getAddress());
+          existingUser.setTelephone(updatedUser.getTelephone());
+          User savedUser = flightService2.addUserPostgresql(existingUser);
+          return ResponseEntity.ok(savedUser);
+      } else {
+          return ResponseEntity.notFound().build();
+      }
+  }
+
+
+
   @PostMapping("/flightpostgresqlPOST")
   public ResponseEntity<Flight> addFlight(@RequestBody Flight flight) {
       Flight createdFlight = flightService2.addFlightPostgresql(flight);

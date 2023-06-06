@@ -8,6 +8,8 @@ import { CateringComponent } from './catering/catering.component';
 import { CrewComponent } from './crew/crew.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { AdminpageComponent } from './adminpage/adminpage.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: "", component: HomeComponent},
@@ -18,6 +20,7 @@ const routes: Routes = [
   { path: "catering", component: CateringComponent},
   { path: "crew", component: CrewComponent},
   { path: "login", component: LoginComponent},
+  { path: "admin", component: AdminpageComponent, canActivate: [AuthGuard]},
   { path: "**", component: NotFoundComponent }
 ];
 

@@ -1,0 +1,45 @@
+<mat-toolbar>
+    <ng-container *ngIf="flightservice.getFlightNumber(); else noFlightTemplate">
+    <button mat-icon-button (click)="toggleMenu()" style="margin-top: 5px;">
+      <mat-icon>menu</mat-icon>
+    </button>
+    </ng-container>
+    <ng-template #noFlightTemplate>
+      <button mat-icon-button (click)="toggleMenu()" style="margin-top: 5px;">
+        <mat-icon>home</mat-icon>
+      </button>
+      </ng-template>
+    <span class="center">
+      All the information needed for your flight in one place!
+    </span>
+  </mat-toolbar>
+  
+  <ng-container *ngIf="flightservice.getFlightNumber(); else noFlightTemplate2">
+  <div class="menu-container">
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" fixedInViewport="true">
+      <mat-nav-list>
+        <a mat-list-item (click)="showStartPage()">Home</a>
+        <a mat-list-item routerLink="/details">Flight details</a>
+        <a mat-list-item routerLink="/seats">Seats capacity</a>
+        <a mat-list-item routerLink="/luggage">Luggage capacity</a>
+        <a mat-list-item routerLink="/catering">Catering</a>
+        <a mat-list-item routerLink="/crew">Crew details</a>
+        <a mat-list-item routerLink="/login">Login</a>
+      </mat-nav-list>
+    </mat-sidenav>
+  </mat-sidenav-container>
+  </div>
+  </ng-container>
+  <ng-template #noFlightTemplate2>
+    <div class="menu-container">
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav mode="side" fixedInViewport="true">
+        <mat-nav-list>
+          <a mat-list-item (click)="showStartPage()">Home</a>
+          <a mat-list-item routerLink="/login">Login</a>
+        </mat-nav-list>
+      </mat-sidenav>
+    </mat-sidenav-container>
+    </div>
+    </ng-template>
